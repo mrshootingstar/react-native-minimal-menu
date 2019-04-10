@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class HomeScreen extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class SettingsScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Settings!</Text>
+        <Icon name="ios-person" size={30} color="#4F8EF7" />
       </View>
     );
   }
