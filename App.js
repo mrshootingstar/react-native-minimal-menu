@@ -3,26 +3,9 @@ import { Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-      </View>
-    );
-  }
-}
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-        <Icon name="ios-person" size={30} color="#4F8EF7" />
-      </View>
-    );
-  }
-}
+import HomeScreen from './src/screens/HomeScreen';
+import GameScreen from './src/screens/GameScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
 
 class IconWithBadge extends React.Component {
   render() {
@@ -70,6 +53,8 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     IconComponent = HomeIconWithBadge;
   } else if (routeName === 'Settings') {
     iconName = `ios-options`;
+  } else if (routeName === 'Game') {
+    iconName = `logo-game-controller-a`;
   }
 
   // You can return any component that you like here!
@@ -80,6 +65,7 @@ export default createAppContainer(
   createBottomTabNavigator(
     {
       Home: { screen: HomeScreen },
+      Game: { screen: GameScreen },
       Settings: { screen: SettingsScreen },
     },
     {
